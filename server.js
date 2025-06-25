@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const authRoutes = require('./routes/auth');
+const createdRoutes = require('./routes/created');
 
 const app = express();
 const PORT = 5000;
@@ -9,7 +10,9 @@ const PORT = 5000;
 app.use(cors());
 app.use(express.json());
 
+app.use("/uploads", express.static("uploads"));
 
+app.use('/api', createdRoutes);
 app.use('/api', authRoutes);
 
 
