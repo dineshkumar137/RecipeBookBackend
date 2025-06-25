@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 });
 
 
-router.post('/Register', async (req, res) => {
+router.post('/register', async (req, res) => {
     const { name, phone, email, password } = req.body;
 
     try {
