@@ -16,14 +16,20 @@ app.use('/api', createdRoutes);
 app.use('/api', authRoutes);
 
 
-mongoose.connect('mongodb://localhost:27017/recipebook', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => {
-  console.log('MongoDB connected');
-}).catch((err) => {
-  console.error('MongoDB error:', err);
-});
+// mongoose.connect('mongodb://localhost:27017/recipebook', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// }).then(() => {
+//   console.log('MongoDB connected');
+// }).catch((err) => {
+//   console.error('MongoDB error:', err);
+// });
+
+const mongoose = require("mongoose");
+
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log("MongoDB connected"))
+  .catch(err => console.log("MongoDB connection error:", err));
 
 
 app.listen(PORT, () => {
