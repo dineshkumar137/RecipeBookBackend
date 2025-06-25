@@ -7,7 +7,7 @@ const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'dineshkumar.l2022ece@sece.ac.in',          
+        user: 'dk7024092@gmail.com',          
         pass: 'erld kpin anjw zrna'              
     }
 });
@@ -30,7 +30,7 @@ router.post('/Register', async (req, res) => {
 
     
         const mailOptions = {
-            from: 'your_email@gmail.com',
+            from: 'dk7024092@gmail.com',
             to: email,
             subject: 'Welcome to Recipe Book!',
             text: `Hi ${name},\n\nThank you for registering at Recipe Book.\nHappy cooking! 🍽️\n\n– Team Recipe Book`
